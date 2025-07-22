@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Username & Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Username & Password Generator</h1>
+
+    <div class="mode-selector">
+      <button class="mode-btn active" onclick="setMode('username')" id="usernameBtn">
+        👤 Username Generator
+      </button>
+      <button class="mode-btn" onclick="setMode('password')" id="passwordBtn">
+        🔒 Password Generator
+      </button>
+    </div>
+
+    <div class="mode-info" id="modeInfo">
+      <strong>Username Mode:</strong> Generates memorable, readable usernames perfect for social media, gaming, and online accounts.
+    </div>
+
+    <div class="input-group">
+      <label for="baseWord">Base Word:</label>
+      <input type="text" id="baseWord" placeholder="e.g., Hero, Phoenix, Storm" />
+    </div>
+
+    <div class="options-section">
+      <div class="section-title">
+        <span>⚙️</span>
+        <span id="optionsTitle">Username Options</span>
+      </div>
+      
+      <div class="checkbox-group" id="optionsGroup">
+        <!--popupulated using JavaScript-->
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="minLength" id="minLengthLabel">Minimum Length:</label>
+        <input type="number" id="minLength" value="6" min="3" max="50" />
+      </div>
+      <div class="control-group">
+        <label for="maxResults">Max Results:</label>
+        <input type="number" id="maxResults" value="10" min="1" max="50" />
+      </div>
+    </div>
+
+    <button class="generate-btn" onclick="generate()" id="generateBtn">
+      ✨ Generate Usernames
+    </button>
+
+    <div class="strength-meter" id="strengthMeter" style="display: none;">
+      <div>Overall Strength: <span id="strengthText">Medium</span></div>
+      <div class="strength-bar">
+        <div class="strength-fill" id="strengthFill"></div>
+      </div>
+    </div>
+
+    <div class="results-section">
+      <div class="results-header">
+        <div class="results-title" id="resultsTitle">
+          <span>👤</span>
+          <span>Generated Usernames</span>
+        </div>
+        <button class="clear-btn" onclick="clearResults()" style="display: none;" id="clearBtn">Clear All</button>
+      </div>
+      <div class="results-grid" id="resultsGrid">
+        <div class="empty-state">
+          Enter a base word and click generate to see results
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
